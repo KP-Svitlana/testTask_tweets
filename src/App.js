@@ -1,11 +1,12 @@
 import "./App.css";
-import { Button } from "./components/Button";
+
 import { useState } from "react";
+import { UserCard } from "./components/UserCard/UserCard";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
 
-  return <Button isActive={isActive} />;
+  return <UserCard isActive={isActive} />;
 }
 
 export default App;

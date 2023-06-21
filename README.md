@@ -2,5 +2,4 @@
 
 # Used Stack
 
-React
-@emotion
+React, @emotion

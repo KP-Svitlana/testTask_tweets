@@ -1,12 +1,13 @@
 import "./App.css";
 
 import { useState } from "react";
-import { UserCard } from "./components/UserCard/UserCard";
+
+import { UsersList } from "./components/UsersList/UsersList";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
 
-  return <UserCard isActive={isActive} />;
+  return <UsersList isActive={isActive} />;
 }
 
 export default App;

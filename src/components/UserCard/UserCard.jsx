@@ -19,7 +19,7 @@ import userImg_3x from "../../img/userImg_3x.png";
 
 import ava2 from "../../img/ava2.png";
 
-export const UserCard = (isActive) => {
+export const UserCard = ({ isActive }) => {
   return (
     <StyledUserCard>
       <StyledLogo>
@@ -30,8 +30,9 @@ export const UserCard = (isActive) => {
         <source srcSet={`${userImg_1x} 1x,${userImg_2x} 2x,${userImg_3x} 3x`} />
         <img src={userImg_1x} alt="Logo GoIT" />
       </StyledImg>
-      <StyledAvatar src={`${ava2}`} />
       <StyledElement />
+      <StyledAvatar src={`${ava2}`} />
+
       <StyledTextWrap>
         <StyledText>777 tweets</StyledText>
         <StyledText>100,501 Followers</StyledText>

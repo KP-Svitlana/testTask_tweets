@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const StyledUserCard = styled.div`
+export const StyledUserCard = styled.li`
   width: 380px;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ export const StyledAvatar = styled.img`
     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
 
   position: absolute;
-  top: 186px;
+  top: 184px;
   left: 150px;
 `;
 
@@ -47,6 +47,8 @@ export const StyledElement = styled.div`
   background: #ebd8ff;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
+  // position: relative;
+  // top: 40px;
 `;
 
 export const StyledTextWrap = styled.div`

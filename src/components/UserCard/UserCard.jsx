@@ -23,11 +23,19 @@ import userImg_2x from "../../img/userImg_2x.png";
 import userImg_3x from "../../img/userImg_3x.png";
 
 export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
+  const [userFollovers, setUserFollowers] = useState(followers);
+  const [userIsFollowing, setUserIsFollowing] = useState(isFollowing);
+
   function onBtnClick() {
-    if (isFollowing) {
+    if (userIsFollowing) {
       subFolower(followers, id);
+      setUserFollowers(userFollovers - 1);
+      setUserIsFollowing(false);
+    } else {
+      addFolower(followers, id);
+      setUserFollowers(userFollovers + 1);
+      setUserIsFollowing(true);
     }
-    addFolower(followers, id);
   }
 
   return (
@@ -45,10 +53,10 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
 
       <StyledTextWrap>
         <StyledText>{tweets} tweets</StyledText>
-        <StyledText>{followers} Followers</StyledText>
+        <StyledText>{userFollovers} Followers</StyledText>
       </StyledTextWrap>
 
-      <Button isActive={isFollowing} onClick={onBtnClick} />
+      <Button isActive={userIsFollowing} onClick={onBtnClick} />
     </StyledUserCard>
   );
 };

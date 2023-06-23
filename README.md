@@ -1,5 +1,5 @@
 # Test Task Tweets
 
-Used Stack:
+Used Stack: React, @emotion, axios,
 
-React, @emotion
+Data Base: mockapi

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Button } from "../Button";
 import {
   StyledUserCard,
@@ -17,9 +19,7 @@ import userImg_1x from "../../img/userImg_1x.png";
 import userImg_2x from "../../img/userImg_2x.png";
 import userImg_3x from "../../img/userImg_3x.png";
 
-import ava2 from "../../img/ava2.png";
-
-export const UserCard = ({ isActive }) => {
+export const UserCard = ({ tweets, followers, isFollowing, avatar }) => {
   return (
     <StyledUserCard>
       <StyledLogo>
@@ -31,14 +31,14 @@ export const UserCard = ({ isActive }) => {
         <img src={userImg_1x} alt="Logo GoIT" />
       </StyledImg>
       <StyledElement />
-      <StyledAvatar src={`${ava2}`} />
+      <StyledAvatar src={`${avatar}`} />
 
       <StyledTextWrap>
-        <StyledText>777 tweets</StyledText>
-        <StyledText>100,501 Followers</StyledText>
+        <StyledText>{tweets} tweets</StyledText>
+        <StyledText>{followers} Followers</StyledText>
       </StyledTextWrap>
 
-      <Button isActive={isActive} />
+      <Button isActive={isFollowing} />
     </StyledUserCard>
   );
 };

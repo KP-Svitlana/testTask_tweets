@@ -1,12 +1,33 @@
+import { useState, useEffect } from "react";
 import { StyledUsersList } from "./UsersList.styled";
-import { UserCard } from "../UserCard/UserCard";
+import { UserCard } from "../UserCard";
 
-export const UsersList = ({ isActive }) => {
+import { getAllUsers } from "../../API/API";
+
+export const UsersList = () => {
+  const [usersList, setUsersList] = useState([]);
+
+  useEffect(() => {
+    async function fetchUsersList() {
+      const response = await getAllUsers().then((result) => result.data);
+      setUsersList(response);
+    }
+    fetchUsersList();
+  }, []);
+
   return (
     <StyledUsersList>
-      <UserCard isActive={isActive} />
-      <UserCard isActive={isActive} />
-      <UserCard isActive={isActive} />
+      {usersList.map(({ id, avatar, followers, tweets, isFollowing }) => {
+        return (
+          <UserCard
+            key={id}
+            avatar={avatar}
+            followers={followers}
+            tweets={tweets}
+            isFollowing={isFollowing}
+          />
+        );
+      })}
     </StyledUsersList>
   );
 };

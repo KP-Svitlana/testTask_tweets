@@ -1,13 +1,15 @@
 import "./App.css";
 
-import { useState } from "react";
-
 import { UsersList } from "./components/UsersList/UsersList";
 
-function App() {
-  const [isActive, setIsActive] = useState(false);
+import { Container } from "./components/Container";
 
-  return <UsersList isActive={isActive} />;
+function App() {
+  return (
+    <Container>
+      <UsersList />
+    </Container>
+  );
 }
 
 export default App;

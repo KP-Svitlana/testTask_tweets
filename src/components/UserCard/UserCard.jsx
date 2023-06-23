@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { Button } from "../Button";
 import {
@@ -12,7 +12,6 @@ import {
 } from "./UserCard.styled";
 
 import { subFolower, addFolower } from "../../helpers";
-import { getUserbyId } from "../../API/API";
 
 import Logo_1x from "../../img/Logo_1x.png";
 import Logo_2x from "../../img/Logo_2x.png";

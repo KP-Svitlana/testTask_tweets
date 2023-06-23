@@ -1,12 +1,14 @@
 import { StyledButton } from "./Button.styled";
 
-export const Button = ({ isActive }) => {
+export const Button = ({ isActive, onClick }) => {
   return (
     <>
       {isActive ? (
-        <StyledButton active>Following</StyledButton>
+        <StyledButton active onClick={onClick}>
+          Following
+        </StyledButton>
       ) : (
-        <StyledButton>Follow</StyledButton>
+        <StyledButton onClick={onClick}>Follow</StyledButton>
       )}
     </>
   );

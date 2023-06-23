@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Button } from "../Button";
 import {
@@ -11,6 +11,9 @@ import {
   StyledAvatar,
 } from "./UserCard.styled";
 
+import { subFolower, addFolower } from "../../helpers";
+import { getUserbyId } from "../../API/API";
+
 import Logo_1x from "../../img/Logo_1x.png";
 import Logo_2x from "../../img/Logo_2x.png";
 import Logo_3x from "../../img/Logo_3x.png";
@@ -19,7 +22,14 @@ import userImg_1x from "../../img/userImg_1x.png";
 import userImg_2x from "../../img/userImg_2x.png";
 import userImg_3x from "../../img/userImg_3x.png";
 
-export const UserCard = ({ tweets, followers, isFollowing, avatar }) => {
+export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
+  function onBtnClick() {
+    if (isFollowing) {
+      subFolower(followers, id);
+    }
+    addFolower(followers, id);
+  }
+
   return (
     <StyledUserCard>
       <StyledLogo>
@@ -38,7 +48,7 @@ export const UserCard = ({ tweets, followers, isFollowing, avatar }) => {
         <StyledText>{followers} Followers</StyledText>
       </StyledTextWrap>
 
-      <Button isActive={isFollowing} />
+      <Button isActive={isFollowing} onClick={onBtnClick} />
     </StyledUserCard>
   );
 };

@@ -21,6 +21,7 @@ export const UsersList = () => {
         return (
           <UserCard
             key={id}
+            id={id}
             avatar={avatar}
             followers={followers}
             tweets={tweets}

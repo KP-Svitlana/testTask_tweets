@@ -27,11 +27,11 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
 
   function onBtnClick() {
     if (userIsFollowing) {
-      subFolower(followers, id);
+      subFolower(userFollovers, id);
       setUserFollowers(userFollovers - 1);
       setUserIsFollowing(false);
     } else {
-      addFolower(followers, id);
+      addFolower(userFollovers, id);
       setUserFollowers(userFollovers + 1);
       setUserIsFollowing(true);
     }
@@ -52,7 +52,9 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
 
       <StyledTextWrap>
         <StyledText>{tweets} tweets</StyledText>
-        <StyledText>{userFollovers} Followers</StyledText>
+        <StyledText>
+          {new Intl.NumberFormat("en-US").format(userFollovers)} Followers
+        </StyledText>
       </StyledTextWrap>
 
       <Button isActive={userIsFollowing} onClick={onBtnClick} />

@@ -51,7 +51,9 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
       <StyledAvatar src={`${avatar}`} />
 
       <StyledTextWrap>
-        <StyledText>{tweets} tweets</StyledText>
+        <StyledText>
+          {new Intl.NumberFormat("en-US").format(tweets)} tweets
+        </StyledText>
         <StyledText>
           {new Intl.NumberFormat("en-US").format(userFollovers)} Followers
         </StyledText>

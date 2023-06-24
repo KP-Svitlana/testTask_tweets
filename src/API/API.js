@@ -3,13 +3,13 @@ import axios from "axios";
 axios.defaults.baseURL = "https://6415d400351c4aed4910b049.mockapi.io/api/v1";
 
 const limit = 6;
-const page = 1;
 
 const searchParams = new URLSearchParams({
   limit,
 });
 
-export const getAllUsers = () => {
+export const getAllUsers = (page = 1) => {
+  console.log("page:", page);
   return axios.get(`/users?${searchParams}&page=${page}`);
 };
 

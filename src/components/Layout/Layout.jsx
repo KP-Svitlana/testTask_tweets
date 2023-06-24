@@ -4,7 +4,6 @@ import { Header } from "../Header";
 import { Container } from "../Container";
 
 const Layout = () => {
-  console.log("is is layout");
   return (
     <>
       <Container>

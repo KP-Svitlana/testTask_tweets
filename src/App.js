@@ -1,14 +1,18 @@
-import "./App.css";
+import { lazy } from "react";
+import { Layout } from "./components/Layout";
+import { Route, Routes } from "react-router-dom";
 
-import { UsersList } from "./components/UsersList/UsersList";
-
-import { Container } from "./components/Container";
+const HomePage = lazy(() => import("./pages/Home"));
+const TweetsPage = lazy(() => import("./pages/Tweets"));
 
 function App() {
   return (
-    <Container>
-      <UsersList />
-    </Container>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="tweets" element={<TweetsPage />} />
+      </Route>
+    </Routes>
   );
 }
 

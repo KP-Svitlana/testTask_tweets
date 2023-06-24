@@ -7,7 +7,7 @@ export const StyledButton = styled.button`
   padding: 14px, 28px, 14px, 28px;
   align-items: center;
   margin: 0 auto;
-  margin-bottom: 36px;
+
   border-radius: 10px;
   border-color: ${(props) => (props.active ? "#5CD3A8" : "#ebd8ff")};
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);

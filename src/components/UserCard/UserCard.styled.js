@@ -4,6 +4,7 @@ export const StyledUserCard = styled.li`
   width: 380px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 36px;
 
   background: linear-gradient(
     114.99deg,

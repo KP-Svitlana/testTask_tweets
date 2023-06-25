@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -30,12 +30,16 @@ export const StyledLinkWrap = styled.div`
   background-color: #ebd8ff;
   border-radius: 5px;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+
+  :hover {
+    transform: scale(1.15);
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
 
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
   font-size: 18px;

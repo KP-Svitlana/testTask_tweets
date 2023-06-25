@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
+
 import { UsersList } from "../components/UsersList";
 import { ExtraBtn } from "../components/Button";
 import { Section } from "../components/Section";
+import { Filter } from "../components/Filter";
 
 import { getAllUsers } from "../API/API";
-import { useEffect, useState } from "react";
 
 const Tweets = () => {
   const [usersList, setUsersList] = useState([]);
@@ -25,6 +27,7 @@ const Tweets = () => {
 
   return (
     <Section>
+      <Filter />
       <UsersList data={usersList} />
       <ExtraBtn
         text={"Load More"}

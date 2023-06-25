@@ -9,7 +9,6 @@ const searchParams = new URLSearchParams({
 });
 
 export const getAllUsers = (page = 1) => {
-  console.log("page:", page);
   return axios.get(`/users?${searchParams}&page=${page}`);
 };
 

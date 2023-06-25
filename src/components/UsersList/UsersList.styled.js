@@ -5,5 +5,5 @@ export const StyledUsersList = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 50px;
-  padding: 100px;
+  padding: 0px 100px 100px 100px;
 `;

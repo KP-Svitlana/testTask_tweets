@@ -36,6 +36,8 @@ export const Description = () => {
         <StyledtextText>Emotion/styled</StyledtextText>
         <StyledtextText>Axios</StyledtextText>
       </StyledtextTitle>
+
+      <StyledtextTitle>Create by @Svitlana Kovalenko</StyledtextTitle>
     </Section>
   );
 };

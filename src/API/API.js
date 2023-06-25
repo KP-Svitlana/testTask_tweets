@@ -5,20 +5,32 @@ axios.defaults.baseURL = 'https://6415d400351c4aed4910b049.mockapi.io/api/v1';
 const limit = 6;
 
 export const getAllUsers = (page = 1) => {
-  const searchParams = new URLSearchParams({
-    limit,
-  });
-  return axios.get(`/users?${searchParams}&page=${page}`);
+  try {
+    const searchParams = new URLSearchParams({
+      limit,
+    });
+    return axios.get(`/users?${searchParams}&page=${page}`);
+  } catch (error) {
+    return error.message;
+  }
 };
 
 export const getFileredUsers = (page = 1, filter) => {
-  const searchParams = new URLSearchParams({
-    isFollowing: filter,
-    limit,
-  });
-  return axios.get(`/users?${searchParams}&page=${page}`);
+  try {
+    const searchParams = new URLSearchParams({
+      isFollowing: filter,
+      limit,
+    });
+    return axios.get(`/users?${searchParams}&page=${page}`);
+  } catch (error) {
+    return error.message;
+  }
 };
 
 export const updateUserById = (id, data) => {
-  return axios.put(`/users/${id}`, data);
+  try {
+    return axios.put(`/users/${id}`, data);
+  } catch (error) {
+    return error.message;
+  }
 };

@@ -1,11 +1,11 @@
-import { Section } from "../Section";
+import { Section } from 'components/Section';
 import {
   StyledAfterTitle,
   StyledTitle,
   StyledtextTitle,
   StyledtextText,
   StyledtextSpan,
-} from "./Description.styled";
+} from './Description.styled';
 
 export const Description = () => {
   return (
@@ -15,7 +15,7 @@ export const Description = () => {
       <StyledtextTitle>
         Implementation of the project:
         <StyledtextText>
-          The project was compiled with{" "}
+          The project was compiled with{' '}
           <StyledtextSpan>create-react-app</StyledtextSpan>.
         </StyledtextText>
         <StyledtextText>

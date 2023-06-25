@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { UsersList } from "../components/UsersList";
-import { ExtraBtn } from "../components/Button";
-import { Section } from "../components/Section";
-import { Filter } from "../components/Filter";
+import { UsersList } from 'components/UsersList';
+import { ExtraBtn } from 'components/Button';
+import { Section } from 'components/Section';
+import { Filter } from 'components/Filter';
 
-import { getAllUsers, getFileredUsers } from "../API/API";
+import { getAllUsers, getFileredUsers } from 'API';
 
 const Tweets = () => {
   const [usersList, setUsersList] = useState([]);
   const [page, setPage] = useState(1);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    if (filter === "follow") {
+    if (filter === 'follow') {
       async function fetchFilteredUsersList() {
         const response = await getFileredUsers(page, false).then(
-          (result) => result.data
+          result => result.data
         );
 
         setUsersList([...usersList, ...response]);
       }
       fetchFilteredUsersList();
-    } else if (filter === "following") {
+    } else if (filter === 'following') {
       async function fetchFilteredUsersList() {
         const response = await getFileredUsers(page, true).then(
-          (result) => result.data
+          result => result.data
         );
 
         setUsersList([...usersList, ...response]);
@@ -33,7 +33,7 @@ const Tweets = () => {
       fetchFilteredUsersList();
     } else {
       async function fetchUsersList() {
-        const response = await getAllUsers(page).then((result) => result.data);
+        const response = await getAllUsers(page).then(result => result.data);
 
         setUsersList([...usersList, ...response]);
       }
@@ -57,7 +57,7 @@ const Tweets = () => {
       <Filter onChange={onFilterSelect} />
       <UsersList data={usersList} />
       <ExtraBtn
-        text={"Load More"}
+        text={'Load More'}
         isActive={true}
         onClick={onLoadMoreBtnClick}
       />

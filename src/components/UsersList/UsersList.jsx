@@ -1,5 +1,5 @@
-import { StyledUsersList } from "./UsersList.styled";
-import { UserCard } from "../UserCard";
+import { StyledUsersList } from './UsersList.styled';
+import { UserCard } from 'components/UserCard';
 
 export const UsersList = ({ data }) => {
   return (

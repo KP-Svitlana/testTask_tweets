@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { Button } from "../Button";
+import { Button } from 'components/Button';
 import {
   StyledUserCard,
   StyledLogo,
@@ -9,17 +9,17 @@ import {
   StyledTextWrap,
   StyledText,
   StyledAvatar,
-} from "./UserCard.styled";
+} from './UserCard.styled';
 
-import { subFolower, addFolower } from "../../helpers";
+import { subFolower, addFolower } from 'helpers';
 
-import Logo_1x from "../../img/Logo_1x.png";
-import Logo_2x from "../../img/Logo_2x.png";
-import Logo_3x from "../../img/Logo_3x.png";
+import Logo_1x from 'img/Logo_1x.png';
+import Logo_2x from 'img/Logo_2x.png';
+import Logo_3x from 'img/Logo_3x.png';
 
-import userImg_1x from "../../img/userImg_1x.png";
-import userImg_2x from "../../img/userImg_2x.png";
-import userImg_3x from "../../img/userImg_3x.png";
+import userImg_1x from 'img/userImg_1x.png';
+import userImg_2x from 'img/userImg_2x.png';
+import userImg_3x from 'img/userImg_3x.png';
 
 export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
   const [userFollovers, setUserFollowers] = useState(followers);
@@ -52,10 +52,10 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
 
       <StyledTextWrap>
         <StyledText>
-          {new Intl.NumberFormat("en-US").format(tweets)} tweets
+          {new Intl.NumberFormat('en-US').format(tweets)} tweets
         </StyledText>
         <StyledText>
-          {new Intl.NumberFormat("en-US").format(userFollovers)} Followers
+          {new Intl.NumberFormat('en-US').format(userFollovers)} Followers
         </StyledText>
       </StyledTextWrap>
 

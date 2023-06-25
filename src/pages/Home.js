@@ -1,7 +1,9 @@
+import { Description } from "../components/Description";
+
 const Home = () => {
   return (
     <>
-      <p>Home Page</p>
+      <Description />
     </>
   );
 };

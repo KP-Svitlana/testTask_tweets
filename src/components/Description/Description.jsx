@@ -15,7 +15,7 @@ export const Description = () => {
       <StyledtextTitle>
         Implementation of the project:
         <StyledtextText>
-          The project was compiled with{' '}
+          The project was compiled with
           <StyledtextSpan>create-react-app</StyledtextSpan>.
         </StyledtextText>
         <StyledtextText>

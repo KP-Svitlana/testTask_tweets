@@ -1,5 +1,11 @@
-# Test Task Tweets
+# Test Task Tweets from GoIT
 
-Used Stack: React, @emotion, axios,
+Implementation of the project:
+
+- The project was compiled with create-react-app.
+- Components are created using the react components.
+- State management libraries were not used.
 
 Data Base: mockapi
+
+Used Stack: React, Java Script, @emotion, axios.

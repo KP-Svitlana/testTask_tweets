@@ -1,10 +1,13 @@
 import { StyledDropdown, StyledFilterLabel } from "./Fitler.styled";
 
-export const Filter = () => {
+export const Filter = ({ onChange }) => {
+  const handleChange = (event) => {
+    onChange(event.target.value);
+  };
   return (
     <StyledFilterLabel>
       Filter
-      <StyledDropdown>
+      <StyledDropdown onChange={handleChange}>
         <option value="showAll">Show All</option>
 
         <option value="follow">Follow</option>

@@ -12,7 +12,7 @@ export const Filter = ({ onChange }) => {
   };
   return (
     <StyledWrap>
-      <StyledLink to="/" end>
+      <StyledLink to="/">
         <BsArrowLeftCircle />
         Back home
       </StyledLink>

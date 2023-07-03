@@ -6,6 +6,6 @@ Implementation of the project:
 - Components are created using the react components.
 - State management libraries were not used.
 
-Data Base: mockapi
+Data Base: mockapi.
 
 Used Stack: React, Java Script, @emotion, axios.

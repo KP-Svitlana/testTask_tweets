@@ -37,7 +37,7 @@ export const Description = () => {
         <StyledtextText>Axios</StyledtextText>
       </StyledtextTitle>
 
-      <StyledtextTitle>Create by @Svitlana Kovalenko</StyledtextTitle>
+      <StyledAfterTitle>Create by @Svitlana Kovalenko</StyledAfterTitle>
     </Section>
   );
 };

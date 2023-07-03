@@ -18,6 +18,7 @@ export const StyledButton = styled.button`
   line-height: 22px;
   text-transform: uppercase;
   color: #373737;
+  cursor: pointer;
 
   :hover {
     transform: scale(1.15);

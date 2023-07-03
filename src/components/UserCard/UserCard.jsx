@@ -48,7 +48,7 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
         <img src={userImg_1x} alt="Logo GoIT" />
       </StyledImg>
       <StyledElement />
-      <StyledAvatar src={`${avatar}`} />
+      <StyledAvatar src={`${avatar}`} alt="User`s avatar" />
 
       <StyledTextWrap>
         <StyledText>

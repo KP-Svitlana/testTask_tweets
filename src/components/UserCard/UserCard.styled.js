@@ -1,4 +1,8 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+
+import userImg_1x from 'img/userImg_1x.png';
+import userImg_2x from 'img/userImg_2x.png';
+import userImg_3x from 'img/userImg_3x.png';
 
 export const StyledUserCard = styled.li`
   width: 380px;
@@ -29,6 +33,19 @@ export const StyledImg = styled.picture`
   left: 0;
   margin: 0 auto;
   margin-bottom: 4px;
+  width: 308px;
+  height: 168px;
+  background-image: url(${userImg_1x});
+  background-size: 308px 168px;
+
+  @media (min-resolution: 192dpi) {
+    background-image: url(${userImg_2x});
+    background-size: 308px 168px;
+  }
+  @media (min-resolution: 288dpi) {
+    background-image: url(${userImg_3x});
+    background-size: 308px 168px;
+  }
 `;
 
 export const StyledAvatar = styled.img`
@@ -64,7 +81,7 @@ export const StyledTextWrap = styled.div`
 `;
 
 export const StyledText = styled.p`
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;

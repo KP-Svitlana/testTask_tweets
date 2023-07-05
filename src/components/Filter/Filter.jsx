@@ -9,6 +9,7 @@ import { BsArrowLeftCircle } from 'react-icons/bs';
 export const Filter = ({ onChange }) => {
   const handleChange = event => {
     onChange(event.target.value);
+    localStorage.setItem('filter', event.target.value);
   };
   return (
     <StyledWrap>
@@ -19,7 +20,10 @@ export const Filter = ({ onChange }) => {
       <div>
         <StyledFilterLabel>
           Filter
-          <StyledDropdown onChange={handleChange}>
+          <StyledDropdown
+            value={localStorage.getItem('filter') || 'showAll'}
+            onChange={handleChange}
+          >
             <option value="showAll">Show All</option>
 
             <option value="follow">Follow</option>

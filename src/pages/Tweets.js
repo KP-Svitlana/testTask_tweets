@@ -10,7 +10,7 @@ import { getAllUsers, getFileredUsers } from 'API';
 const Tweets = () => {
   const [usersList, setUsersList] = useState([]);
   const [page, setPage] = useState(1);
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState(localStorage.getItem('filter'));
 
   useEffect(() => {
     if (filter === 'follow') {

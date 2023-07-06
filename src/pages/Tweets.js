@@ -5,12 +5,18 @@ import { ExtraBtn } from 'components/Button';
 import { Section } from 'components/Section';
 import { Filter } from 'components/Filter';
 
-import { getAllUsers, getFileredUsers } from 'API';
+import {
+  getAllUsers,
+  getFileredUsers,
+  getUsers,
+  getAllFileredUsers,
+} from 'API';
 
 const Tweets = () => {
   const [usersList, setUsersList] = useState([]);
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState(localStorage.getItem('filter'));
+  const [isLoadMoreBtnVisible, setIsLoadMoreBtnVisible] = useState('false');
 
   useEffect(() => {
     if (filter === 'follow') {
@@ -18,7 +24,10 @@ const Tweets = () => {
         const response = await getFileredUsers(page, false).then(
           result => result.data
         );
-
+        const totalHits = await getAllFileredUsers(false).then(
+          result => result.data
+        );
+        setIsLoadMoreBtnVisible(page < Math.ceil(totalHits.length / 6));
         setUsersList([...usersList, ...response]);
       }
       fetchFilteredUsersList();
@@ -27,14 +36,18 @@ const Tweets = () => {
         const response = await getFileredUsers(page, true).then(
           result => result.data
         );
-
+        const totalHits = await getAllFileredUsers(true).then(
+          result => result.data
+        );
+        setIsLoadMoreBtnVisible(page < Math.ceil(totalHits.length / 6));
         setUsersList([...usersList, ...response]);
       }
       fetchFilteredUsersList();
     } else {
       async function fetchUsersList() {
         const response = await getAllUsers(page).then(result => result.data);
-
+        const totalHits = await getUsers().then(result => result.data);
+        setIsLoadMoreBtnVisible(page < Math.ceil(totalHits.length / 6));
         setUsersList([...usersList, ...response]);
       }
       fetchUsersList();
@@ -56,11 +69,13 @@ const Tweets = () => {
     <Section>
       <Filter onChange={onFilterSelect} />
       <UsersList data={usersList} />
-      <ExtraBtn
-        text={'Load More'}
-        isActive={true}
-        onClick={onLoadMoreBtnClick}
-      />
+      {isLoadMoreBtnVisible && (
+        <ExtraBtn
+          text={'Load More'}
+          isActive={true}
+          onClick={onLoadMoreBtnClick}
+        />
+      )}
     </Section>
   );
 };

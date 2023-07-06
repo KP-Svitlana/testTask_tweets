@@ -27,9 +27,28 @@ export const getFileredUsers = (page = 1, filter) => {
   }
 };
 
+export const getUsers = () => {
+  try {
+    return axios.get(`/users`);
+  } catch (error) {
+    return error.message;
+  }
+};
+
 export const updateUserById = (id, data) => {
   try {
     return axios.put(`/users/${id}`, data);
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const getAllFileredUsers = filter => {
+  try {
+    const searchParams = new URLSearchParams({
+      isFollowing: filter,
+    });
+    return axios.get(`/users?${searchParams}`);
   } catch (error) {
     return error.message;
   }

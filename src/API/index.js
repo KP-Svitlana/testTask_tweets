@@ -1,3 +1,15 @@
-import { getAllUsers, getFileredUsers, updateUserById } from './API';
+import {
+  getAllUsers,
+  getFileredUsers,
+  updateUserById,
+  getUsers,
+  getAllFileredUsers,
+} from './API';
 
-export { getAllUsers, getFileredUsers, updateUserById };
+export {
+  getAllUsers,
+  getFileredUsers,
+  updateUserById,
+  getUsers,
+  getAllFileredUsers,
+};

@@ -24,10 +24,10 @@ const Tweets = () => {
         const response = await getFileredUsers(page, false).then(
           result => result.data
         );
-        const totalHits = await getAllFileredUsers(false).then(
+        const totalUsers = await getAllFileredUsers(false).then(
           result => result.data
         );
-        setIsLoadMoreBtnVisible(page < Math.ceil(totalHits.length / 6));
+        setIsLoadMoreBtnVisible(page < Math.ceil(totalUsers.length / 6));
         setUsersList([...usersList, ...response]);
       }
       fetchFilteredUsersList();
@@ -36,18 +36,18 @@ const Tweets = () => {
         const response = await getFileredUsers(page, true).then(
           result => result.data
         );
-        const totalHits = await getAllFileredUsers(true).then(
+        const totalUsers = await getAllFileredUsers(true).then(
           result => result.data
         );
-        setIsLoadMoreBtnVisible(page < Math.ceil(totalHits.length / 6));
+        setIsLoadMoreBtnVisible(page < Math.ceil(totalUsers.length / 6));
         setUsersList([...usersList, ...response]);
       }
       fetchFilteredUsersList();
     } else {
       async function fetchUsersList() {
         const response = await getAllUsers(page).then(result => result.data);
-        const totalHits = await getUsers().then(result => result.data);
-        setIsLoadMoreBtnVisible(page < Math.ceil(totalHits.length / 6));
+        const totalUsers = await getUsers().then(result => result.data);
+        setIsLoadMoreBtnVisible(page < Math.ceil(totalUsers.length / 6));
         setUsersList([...usersList, ...response]);
       }
       fetchUsersList();

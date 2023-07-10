@@ -5,7 +5,6 @@ import {
   StyledUserCard,
   StyledLogo,
   StyledImg,
-  StyledElement,
   StyledTextWrap,
   StyledText,
   StyledAvatar,
@@ -41,7 +40,6 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
       </StyledLogo>
       <StyledImg />
 
-      <StyledElement />
       <StyledAvatar src={`${avatar}`} alt="User`s avatar" />
 
       <StyledTextWrap>

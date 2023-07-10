@@ -48,18 +48,17 @@ export const StyledImg = styled.picture`
   }
 `;
 
+export const StyledSvg = styled('svg')``;
+
 export const StyledAvatar = styled.img`
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   background: #ebd8ff;
-  border: 8px solid #ebd8ff;
   border-radius: 50%;
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
-    inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
 
   position: absolute;
-  top: 178px;
-  left: 150px;
+  top: 187px;
+  left: 160px;
 `;
 
 export const StyledTextWrap = styled.div`

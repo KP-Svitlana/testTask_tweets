@@ -15,6 +15,7 @@ import { subFolower, addFolower } from 'helpers';
 import Logo_1x from 'img/Logo_1x.png';
 import Logo_2x from 'img/Logo_2x.png';
 import Logo_3x from 'img/Logo_3x.png';
+import { ReactComponent as AvatarSvg } from 'img/svg/Ellipse 1 (Stroke).svg';
 
 export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
   const [userFollovers, setUserFollowers] = useState(followers);
@@ -40,6 +41,9 @@ export const UserCard = ({ id, tweets, followers, isFollowing, avatar }) => {
       </StyledLogo>
       <StyledImg />
 
+      <AvatarSvg
+        style={{ position: 'absolute', top: '178px', left: '150px', zIndex: 1 }}
+      />
       <StyledAvatar src={`${avatar}`} alt="User`s avatar" />
 
       <StyledTextWrap>

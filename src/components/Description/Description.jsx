@@ -16,7 +16,7 @@ export const Description = () => {
         Implementation of the project:
         <StyledtextText>
           The project was compiled with
-          <StyledtextSpan>create-react-app</StyledtextSpan>.
+          <StyledtextSpan> create-react-app</StyledtextSpan>.
         </StyledtextText>
         <StyledtextText>
           Components are created using the react components.

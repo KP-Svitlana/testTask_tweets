@@ -1,5 +1,7 @@
 # Test Task Tweets from GoIT
 
+The application allows you to easily follow people you are interested in.
+
 Implementation of the project:
 
 - The project was compiled with create-react-app.

@@ -32,6 +32,7 @@ export const StyledDropdown = styled.select`
 
   background-color: #ebd8ff;
   border-radius: 10px;
+  border-color: #4b2a99;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
 
   font-family: 'Montserrat';
@@ -41,6 +42,10 @@ export const StyledDropdown = styled.select`
   line-height: 22px;
   text-transform: uppercase;
   color: #4b2a99;
+
+  :focus-visible {
+    outline: 0px solid transparent;
+  }
 `;
 
 export const StyledLink = styled(Link)`
